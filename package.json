@@ -1,0 +1,23 @@
+{
+  "name": "chiptuneradar",
+  "version": "0.0.1",
+  "description": "site where you can search all upcoming chiptune shows",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve | npm run dev",
+    "serve": "http-server -p 8080",
+    "dev": "webpack-dev-server --progress --colors --port 8090"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "leaflet": "^0.7.3",
+    "react": "^0.12.2"
+  },
+  "devDependencies": {
+    "babel-core": "^4.4.3",
+    "babel-loader": "^4.0.0",
+    "webpack": "^1.5.3",
+    "webpack-dev-server": "^1.7.0"
+  }
+}
