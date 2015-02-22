@@ -2,6 +2,7 @@ var React = require("react");
 var StateFromStoreMixin = require("items-store/StateFromStoresMixin");
 var RouteHandler = require("react-router").RouteHandler;
 var Title = require('../Title');
+var Create = require('../Create');
 
 require("./style.scss");
 
@@ -18,6 +19,7 @@ var Application = React.createClass({
 	render: function() {
 		return <div className="fill_parent">
                 <Title />
+                <Create />
                 <RouteHandler />
             </div>;
 	}

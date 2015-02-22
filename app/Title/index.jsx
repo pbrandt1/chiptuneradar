@@ -2,11 +2,16 @@ var React = require("react");
 require('./arcade.scss');
 var Walkway = require('walkway.js');
 
-var title = 'Chiptune\u0020Radar';
+var title = 'Chiptune Radar';
 
 module.exports = React.createClass({
     getInitialState: function() {
-        return {lines: [], viewBox: '0 0 0 0', shown: '', hidden: title}
+        return {
+            lines: [], // svg lines, changes as the viewbox resizes
+            viewBox: '0 0 0 0', // svg viewbox, gets resized
+            shown: '',  // the white part of the title as it gets typed
+            hidden: title // the hidden(blue) part of the title as it gets typed
+        }
     },
     recalculateLines: function() {
         var numberOfHorizontalLines = 11;
@@ -41,7 +46,18 @@ module.exports = React.createClass({
         this.setState({lines: lines, viewBox: viewBox});
     },
     componentDidMount: function() {
+        /*
+        Here's the flow:
+        1. blank blue screen
+        2. draw "Chiptune Radar" character by character
+        3. animate the svg grid with walkway.js
+        4. resize the overlay (all the blue stuff) to reveal the map
+        5. show the tagline
+         */
+
         var me = this;
+
+        // initializes the svg grid
         this.recalculateLines();
 
         var svg = new Walkway({
@@ -65,7 +81,7 @@ module.exports = React.createClass({
             });
 
             n++;
-        }, 200);
+        }, 150);
 
         setTimeout(function() {
             svg.draw(function() {
@@ -77,7 +93,7 @@ module.exports = React.createClass({
                     clearInterval(int);
                 }, 2000)
             });
-        }, 1000);
+        }, 1500);
     },
     render: function() {
         return <div id="arcade-overlay">

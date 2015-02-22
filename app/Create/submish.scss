@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'arcade-atari';
+  src: url('atari-webfont.eot');
+  src: url('atari-webfont.eot?#iefix') format('embedded-opentype'),
+  url('atari-webfont.woff2') format('woff2'),
+  url('atari-webfont.woff') format('woff'),
+  url('atari-webfont.ttf') format('truetype'),
+  url('atari-webfont.svg#atari_font_full_versionRg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#create-button {
+  position: fixed;
+  bottom: -75px;
+  right: 15px;
+  background-color: #000c9a;
+  color: white;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  z-index: 2000;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  transition: all .2s cubic-bezier(.4,0,.2,1);
+
+  #create-pencil {
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    margin-left: 16px;
+    margin-top: 16px;
+    position: absolute;
+    transition: all .2s cubic-bezier(.4,0,.2,1);
+    opacity: 0;
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+  }
+  &:hover {
+    #create-plus {
+      opacity: 0;
+      visibility: visible;
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+
+    #create-pencil {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  #create-plus {
+    top: 0;
+    left: 0;
+    margin-left: 16px;
+    margin-top: 16px;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    transition: all .2s cubic-bezier(.4,0,.2,1);
+    opacity: 1;
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+    font-family: 'arcade-atari', 'sans-serif';
+  }
+}
