@@ -1,0 +1,30 @@
+body {
+  background: #eee;
+}
+
+.application {
+  opacity: 1;
+}
+
+.application.loading {
+  opacity: 0.2;
+  transition: opacity 600ms;
+}
+
+/* contains the map */
+#content {
+  position: fixed;
+  top: 6em;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fill_parent {
+  height: 100%;
+  width: 100%;
+}
+
+.map {
+  height: 100%;
+}

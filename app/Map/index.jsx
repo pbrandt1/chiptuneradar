@@ -1,14 +1,17 @@
-var React = require('react');
+var React = require("react");
+// var Link = require("react-router").Link;
 var Leaflet = require('leaflet');
 var L = Leaflet;
+require('./tile.stamen');
+require('leaflet/dist/leaflet.css');
 
 var shows = require('./showService');
 
-// http://stackoverflow.com/a/26762020
 module.exports = React.createClass({
     displayName: 'Map',
     componentDidMount: function() {
         // Toner is the best.
+        //var TonerLayer = L.tileLayer.provider('Stamen.Toner');
         var TonerLayer = new L.StamenTileLayer("toner");
 
         //var CartoDB_DarkMatter = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
@@ -33,7 +36,7 @@ module.exports = React.createClass({
 
         // Add the shows
         shows.find().map(function(show) {
-            L.marker(show.location).addTo(map).bindPopup(show.artist + ' at ' + show.venue + '<br />' + show.time);
+            //L.marker(show.location).addTo(map).bindPopup(show.artist + ' at ' + show.venue + '<br />' + show.time);
         });
 
         // Location, location, location
