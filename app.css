@@ -33,6 +33,7 @@
     height: 100%;
     width: 100%;
     background-color: #000c9a;
+    box-shadow: 0 1px 2px #626262;
 
     -webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
     transition: height 1s;
@@ -49,6 +50,7 @@
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    text-transform: uppercase;
 
     padding: 0;
     margin: 0;
