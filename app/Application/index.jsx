@@ -3,7 +3,6 @@ var StateFromStoreMixin = require("items-store/StateFromStoresMixin");
 var RouteHandler = require("react-router").RouteHandler;
 var Title = require('../Title');
 
-require('../skel.min');
 require("./style.scss");
 
 var Application = React.createClass({

@@ -1,10 +1,12 @@
 var React = require("react");
-require('./arcade.css');
+require('./arcade.scss');
 var Walkway = require('walkway.js');
+
+var title = 'Chiptune\u0020Radar';
 
 module.exports = React.createClass({
     getInitialState: function() {
-        return {lines: [], viewBox: '0 0 0 0'}
+        return {lines: [], viewBox: '0 0 0 0', shown: '', hidden: title}
     },
     recalculateLines: function() {
         var numberOfHorizontalLines = 11;
@@ -51,6 +53,20 @@ module.exports = React.createClass({
             }
         });
 
+        var n = 0;
+        var interval = setInterval(function() {
+            if (n == title.length) {
+                return clearInterval(interval);
+            }
+
+            me.setState({
+                shown: title.substring(0,n+1),
+                hidden: title.substring(n+1,title.length)
+            });
+
+            n++;
+        }, 200);
+
         setTimeout(function() {
             svg.draw(function() {
                 document.getElementById("arcade-overlay").style.height = "6em";
@@ -65,7 +81,10 @@ module.exports = React.createClass({
     },
     render: function() {
         return <div id="arcade-overlay">
-            <h1 id="arcade-title">Chiptune Radar</h1>
+            <h1 id="arcade-title">
+                <div id="arcade-shown-title">{this.state.shown}</div>
+                <div id="arcade-hidden-title">{this.state.hidden}</div>
+            </h1>
             <svg id="arcade-grid" xmlns="http://www.w3.org/2000/svg" viewBox={this.state.viewBox}>
                 <g>
                 {this.state.lines.map(function(line) {
