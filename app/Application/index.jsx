@@ -5,6 +5,8 @@ var Title = require('../Title');
 var Create = require('../Create');
 
 require("./style.scss");
+var skel = window.skel = require('../skel.min');
+skel.init();
 
 var Application = React.createClass({
 	mixins: [StateFromStoreMixin],

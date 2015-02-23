@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'arcade-atari';
+  src: url('atari-webfont.eot');
+  src: url('atari-webfont.eot?#iefix') format('embedded-opentype'),
+  url('atari-webfont.woff2') format('woff2'),
+  url('atari-webfont.woff') format('woff'),
+  url('atari-webfont.ttf') format('truetype'),
+  url('atari-webfont.svg#atari_font_full_versionRg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2500;
+
+  &.closed {
+    display: none;
+  }
+
+  &.closed >#create-modal-bg {
+    opacity: 0;
+  }
+
+  &.closed >#create-modal-content {
+    top: -100%;
+  }
+}
+
+#create-modal-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(18, 20, 51, 0.90);
+  z-index: 3000;
+  opacity: 1;
+}
+
+#create-modal-content {
+  background-color: #000c9a;
+  color: white;
+  border: 2px solid white;
+  font-family: arcade-atari, sans-serif;
+  position: relative;
+  top:50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+  >div {
+    padding: 15px;
+  }
+}
+
+.modal-title {
+  font-size: large;
+}
+
+a.modal-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+.modal-form-element {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.modal-button {
+  display: inline-block;
+  margin-right: 15px;
+}
