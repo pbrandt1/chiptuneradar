@@ -39,6 +39,7 @@
     "leaflet-providers": "^1.0.16",
     "less": "^2.1.2",
     "less-loader": "^2.0.0",
+    "mongoose": "^3.8.24",
     "needle": "^0.7.11",
     "null-loader": "^0.1.0",
     "react": "^0.12.2",
